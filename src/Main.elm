@@ -11,10 +11,10 @@ type Msg
     | NewTime Time.Posix
 
 
-main : Program {} Time.Posix Msg
+main : Program Int Time.Posix Msg
 main =
     Browser.application
-        { init = \_ _ _ -> ( Time.millisToPosix 0, Cmd.none )
+        { init = \ms _ _ -> ( Time.millisToPosix ms, Cmd.none )
         , view = view
         , update =
             \msg model ->
