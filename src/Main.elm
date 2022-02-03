@@ -24,7 +24,7 @@ main =
 
                     _ ->
                         ( model, Cmd.none )
-        , subscriptions = always <| Time.every 1000 NewTime
+        , subscriptions = always <| Time.every 1 NewTime
         , onUrlRequest = always NoOp
         , onUrlChange = always NoOp
         }
