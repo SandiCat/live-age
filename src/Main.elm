@@ -39,7 +39,7 @@ view currentTime =
             Time.posixToMillis currentTime - birthday
 
         in_years =
-            toFloat dt / (1000 * 60 * 60 * 24 * 365)
+            toFloat dt / (1000 * 60 * 60 * 24 * 365.25)
     in
     { title = "hey"
     , body =
