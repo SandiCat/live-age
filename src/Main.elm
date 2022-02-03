@@ -3,6 +3,7 @@ module Main exposing (main)
 import Browser
 import Browser.Navigation as Nav
 import Html exposing (..)
+import Html.Attributes as Attrs
 import Time
 
 
@@ -44,7 +45,7 @@ view currentTime =
     { title = "hey"
     , body =
         [ Html.main_ []
-            [ Html.div []
+            [ Html.div [ Attrs.style "color" "#ff33cc" ]
                 [ Html.text <| String.fromFloat <| in_years ]
             ]
         ]
