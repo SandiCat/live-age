@@ -3,7 +3,7 @@ module Main exposing (main)
 import Browser
 import Browser.Navigation as Nav
 import Html exposing (..)
-import Html.Attributes as Attrs
+import Html.Attributes as Attrs exposing (style)
 import Time
 
 
@@ -44,9 +44,20 @@ view currentTime =
     in
     { title = "hey"
     , body =
-        [ Html.main_ []
-            [ Html.div [ Attrs.style "color" "#ff33cc" ]
-                [ Html.text <| String.fromFloat <| in_years ]
+        [ Html.main_
+            []
+            [ Html.div
+                [ style "color" "#ff33cc"
+                , style "font-size" "700%"
+                , style "font-family" "monospace"
+                , style "text-align" "center"
+                , style "margin" "0"
+                , style "position" "absolute"
+                , style "top" "50%"
+                , style "width" "100%"
+                , style "transform" "translateY(-50%)"
+                ]
+                [ Html.text <| String.padRight 18 '0' <| String.fromFloat <| in_years ]
             ]
         ]
     }
